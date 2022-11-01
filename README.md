@@ -36,7 +36,7 @@ The Arch software repos have up-to-date versions of all dependencies.
 
 ```
 sudo pacman -Syyu
-sudo pacman -S gcc gdb glew glfw-x11 glm
+sudo pacman -S gcc gdb glew glfw-x11 glm soil
 ```
 
 Building should now work 😄
