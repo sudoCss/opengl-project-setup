@@ -5,8 +5,9 @@
 #include <glm/ext.hpp>
 #include <SOIL/SOIL.h>
 
-const GLuint DEFAULT_WINDOW_WIDTH = 800, DEFAULT_WINDOW_HEIGHT = 800;
-const char *WINDOW_TITLE = "OpenGL Application";
+#define DEFAULT_WINDOW_WIDTH 800
+#define DEFAULT_WINDOW_HEIGHT 800
+#define WINDOW_TITLE "OpenGL Application"
 
 // This function is a replacement of gluPerspective
 void perspectiveGL(GLdouble fovY, GLdouble aspect, GLdouble zNear, GLdouble zFar)
