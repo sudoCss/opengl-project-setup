@@ -9,28 +9,16 @@
 #define DEFAULT_WINDOW_HEIGHT 800
 #define WINDOW_TITLE "OpenGL Application"
 
-// This function is a replacement of gluPerspective
-void perspectiveGL(GLdouble fovY, GLdouble aspect, GLdouble zNear, GLdouble zFar)
-{
-    const GLdouble pi = 3.1415926535897932384626433832795;
-    GLdouble fW, fH;
-
-    fH = tan(fovY / 360 * pi) * zNear;
-    fW = fH * aspect;
-
-    glFrustum(-fW, fW, -fH, fH, zNear, zFar);
-}
-
 void frame_buffer_size_callback(GLFWwindow *, int new_screen_width, int new_screen_height)
 {
     glViewport(0, 0, new_screen_width, new_screen_height); // Tell OpenGL how to convert from coordinates to pixel values
     glMatrixMode(GL_PROJECTION);                           // Switch to setting the camera perspective
     glLoadIdentity();                                      // Reset the camera
 
-    perspectiveGL(45.0,                                                 // The camera angle
-                  (double)new_screen_width / (double)new_screen_height, // The width-to-height ratio
-                  1.0,                                                  // The near z clipping coordinate
-                  200.0);                                               // The far z clipping coordinate
+    gluPerspective(45.0,                                                 // The camera angle
+                   (double)new_screen_width / (double)new_screen_height, // The width-to-height ratio
+                   1.0,                                                  // The near z clipping coordinate
+                   200.0);                                               // The far z clipping coordinate
 }
 
 int main()
@@ -42,6 +30,7 @@ int main()
         return 1;
 
     window = glfwCreateWindow(DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT, WINDOW_TITLE, NULL, NULL);
+    // window = glfwCreateWindow(DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT, WINDOW_TITLE, glfwGetPrimaryMonitor(), NULL); // If full screen needed
 
     if (!window)
     {

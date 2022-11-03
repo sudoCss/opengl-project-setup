@@ -8,12 +8,12 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "command": "rm -rf build; mkdir build; cd build; g++ -g -I ${workspaceRoot}/include/ ${workspaceRoot}/src/cpp/*.cpp -lGL -lGLEW -lglfw -lm -lSOIL -o opengl-app; cd ${workspaceRoot}; ./build/opengl-app"
+            "command": "rm -rf build; mkdir build; cd build; g++ -g -I ${workspaceRoot}/include/ ${workspaceRoot}/src/cpp/*.cpp -lglut -lGL -lGLU -lGLEW -lglfw -lm -lSOIL -o opengl-app; cd ${workspaceRoot}; ./build/opengl-app"
         },
         {
             "label": "build opengl-app",
             "type": "shell",
-            "command": "rm -rf build; mkdir build; cd build; g++ -g -I ${workspaceRoot}/include/ ${workspaceRoot}/src/cpp/*.cpp -lGL -lGLEW -lglfw -lm -lSOIL -o opengl-app"
+            "command": "rm -rf build; mkdir build; cd build; g++ -g -I ${workspaceRoot}/include/ ${workspaceRoot}/src/cpp/*.cpp -lglut -lGL -lGLU -lGLEW -lglfw -lm -lSOIL -o opengl-app"
         },
         {
             "label": "run opengl-app",
