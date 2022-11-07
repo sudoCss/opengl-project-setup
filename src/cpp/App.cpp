@@ -48,7 +48,12 @@ int main()
     // Done setting up the window
 
     // OpenGL hints
-    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_DEPTH_TEST);     // Enable 3D layering
+    glEnable(GL_COLOR_MATERIAL); // Enable Better coloring
+    glEnable(GL_LIGHTING);       // Enable Lighting
+    glEnable(GL_LIGHT0);         // Enable a light source (There is at least 8 in a scene we can enable theme)
+    glEnable(GL_NORMALIZE);      // Enable Normalizing
+    glShadeModel(GL_SMOOTH);     // Set Shading model to (Smooth)
 
     std::cout << "Loop Started" << std::endl;
     while (!glfwWindowShouldClose(window))
